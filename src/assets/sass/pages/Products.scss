@@ -1,0 +1,163 @@
+@import "../index.scss";
+
+.products {
+  padding: 60px 0;
+  &__container {
+    display: grid;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+  @media (min-width: 768px) {
+    &__container {
+      grid-template-columns: 200px 1fr;
+    }
+  }
+}
+
+/*grid*/
+.products-grid {
+  &__container {
+    display: grid;
+    gap: 2rem 1.5rem;
+    img {
+      height: 175px;
+    }
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1170px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .pagination {
+    width: 100%;
+    padding-top: 60px;
+  }
+}
+
+/*column*/
+.list-wrapper {
+  display: grid;
+  row-gap: 3rem;
+  img {
+    @include img;
+    height: 200px;
+    width: 450px;
+  }
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    max-width: 45em;
+    margin-bottom: 1rem;
+  }
+  h5 {
+    color: $primary6;
+    margin-bottom: 0.75rem;
+  }
+  .btn {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+  main {
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  @media (min-width: 992px) {
+    main {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 2rem;
+      align-items: center;
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+/*sort*/
+.sort {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  border: 1px solid gainsboro;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  column-gap: 2rem;
+  @media (max-width: 576px) {
+    display: flex;
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+    &__buttons {
+      width: 50px;
+    }
+    p {
+      font-size: 14px;
+    }
+    label {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+  }
+  @media (min-width: 768px) {
+    column-gap: 2rem;
+  }
+  p {
+    text-transform: capitalize;
+    margin-bottom: 0;
+    margin: 0;
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+    button {
+      background: transparent;
+      border: 1px solid $black;
+      color: $black;
+      width: 1.5rem;
+      border-radius: 1px;
+      height: 1.5rem;
+      @include df(flex, center, center, null, null);
+      cursor: pointer;
+      svg {
+        font-size: 1rem;
+      }
+    }
+    .active {
+      background: $black;
+      color: white;
+    }
+  }
+  @media (min-width: 992px) {
+    form {
+      text-align: right;
+    }
+  }
+  select {
+    border-color: transparent;
+    font-size: 1rem;
+    text-transform: capitalize;
+    padding: 0.25rem 0.5rem;
+  }
+  label {
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+}
+
+/*pagination*/
+.pagination {
+  @include df(flex, center, center, null, 6px);
+  &__btn {
+    border-color: wheat;
+  }
+  .active {
+    background: $primary6;
+    color: white;
+    border-color: wheat;
+  }
+}

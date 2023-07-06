@@ -1,0 +1,164 @@
+@import "../index.scss";
+
+.product {
+  &__container {
+    position: relative;
+    background: #222;
+    border-radius: 1px;
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 1px;
+      transition: 300ms ease-in;
+    }
+    &__url {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $primary5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      transition: 300ms ease-in;
+      opacity: 0;
+      cursor: pointer;
+      svg {
+        font-size: 1.25rem;
+        color: white;
+      }
+    }
+    &:hover img {
+      opacity: 0.5;
+    }
+    &:hover &__url {
+      opacity: 1;
+    }
+    &__detail {
+      margin-top: 4px;
+      @include df(flex, space-between, center, null, null);
+      h5,
+      p {
+        margin-bottom: 0;
+        font-weight: 400;
+      }
+      p {
+        color: $primary5;
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}
+
+/***************** Filters *****************/
+
+.filters {
+  padding-top: 2rem;
+  &__shipping {
+    display: flex;
+    padding: 16px 0;
+    align-items: center;
+    input[type="checkbox" i] {
+      padding: 0;
+    }
+  }
+  &__content {
+    input {
+      padding: 0.5rem;
+      background-color: $gray10;
+      border-radius: 1px;
+      border-color: gainsboro;
+      &::placeholder {
+        text-transform: inherit;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      display: block;
+      padding: 0.25rem 0;
+      margin: 0.25rem 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid transparent;
+      display: block;
+      text-transform: capitalize;
+      color: $gray5;
+      cursor: pointer;
+      @media (max-width: 600px) {
+        display: flex;
+      }
+      &:hover {
+        // border-bottom: 2px solid $primary6;
+      }
+    }
+    button.active {
+      border-bottom: 2px solid $primary6;
+    }
+    &__colors {
+      @include df(flex, null, center, null, null);
+      .color {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: #222;
+        margin-right: 0.5rem;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        @include df(flex, center, center, null, null);
+        svg {
+          font-size: 0.5rem;
+          color: white;
+        }
+      }
+      .all {
+        margin-right: 8px;
+        width: 1.5rem;
+        background-color: rgb(236, 227, 227);
+        border-radius: 50%;
+      }
+    }
+    &__range {
+      &--price {
+        margin: 0;
+        color: $primary6;
+      }
+      input {
+        appearance: none;
+        background: #edf1f4;
+        outline: none;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff,
+          inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: 1px;
+        padding-right: 0;
+      }
+    }
+    label {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      text-transform: capitalize;
+      column-gap: 0.5rem;
+      font-size: 1rem;
+      max-width: 200px;
+    }
+  }
+  @media (min-width: 992px) {
+    padding: 0;
+  }
+  @media (max-width: 576px) {
+    input[type="text" i] {
+      width: 98%;
+    }
+  }
+}

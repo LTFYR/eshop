@@ -1,0 +1,87 @@
+@import "../index.scss";
+
+.tabs {
+  &__tabsList {
+    @include df(flex, start, center, null, 40px);
+    padding: 40px 0 0 0;
+    border-bottom: 1px solid gainsboro;
+    &__head {
+      font-size: 22px;
+      padding-bottom: 8px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      @media screen and (max-width: 800px) and (min-width: 320px) {
+        font-size: 18px;
+      }
+      cursor: pointer;
+      &:hover {
+        color: goldenrod;
+        border-bottom: 2px solid goldenrod;
+      }
+    }
+    .activeTab {
+      color: goldenrod;
+      border-bottom: 2px solid goldenrod;
+      transition: 300ms all;
+    }
+  }
+}
+
+.product-comments {
+  &__title {
+    h4 {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+  }
+  &__content {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid gainsboro;
+    &__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+      }
+    }
+    &__detail {
+      &--rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div {
+          display: flex;
+        }
+        h5 {
+          padding: 0;
+          margin: 0;
+        }
+        svg {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+.comment-form {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    h4 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  textarea {
+    width: 100%;
+  }
+}

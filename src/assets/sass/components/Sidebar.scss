@@ -1,0 +1,70 @@
+@import "../index.scss";
+
+.sidebar-container {
+  text-align: center;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: 300ms all;
+    transform: translate(-100%);
+    z-index: -1;
+    &__cart {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 400px;
+    }
+    &__links {
+      margin-bottom: 2rem;
+      li {
+        list-style: none;
+        a {
+          display: block;
+          text-align: left;
+          font-size: 1rem;
+          text-transform: capitalize;
+          padding: 1rem 1.5rem;
+          color: $gray3;
+          transition: 300ms all;
+          @include spacing;
+          text-decoration: none;
+        }
+      }
+    }
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      &--btn {
+        font-size: 2rem;
+        background: transparent;
+        border-color: transparent;
+        color: $primary5;
+        transition: 300ms ease-in-out;
+        cursor: pointer;
+        color: $red1;
+        margin-top: 0.2rem;
+      }
+      &--img {
+        align-self: center;
+        height: 44px;
+      }
+    }
+  }
+  .display-sidebar {
+    transform: translate(0);
+    z-index: 999;
+  }
+  @media screen and (min-width: 992px) {
+    .sidebar {
+      display: none;
+    }
+  }
+}

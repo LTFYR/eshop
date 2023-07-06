@@ -1,0 +1,29 @@
+@import "../index.scss";
+
+.about {
+  display: grid;
+  gap: 4rem;
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    height: 300px;
+    object-fit: cover;
+  }
+  &__title {
+    text-align: center;
+    &__underline {
+      width: 6rem;
+      height: 0.25rem;
+      background: $primary5;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    img {
+      height: 500px;
+    }
+  }
+}

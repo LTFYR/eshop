@@ -1,0 +1,50 @@
+@import "../index.scss";
+.footer-wrapper {
+  background: #232f3e;
+  .footer {
+    width: 90vw;
+    @include mauto;
+    max-width: 1290px;
+    padding: 40px 10px;
+    &__links {
+      display: block;
+      @media screen and (min-width: 992px) {
+        @include df(flex, space-between, center, null, null);
+      }
+      padding: 0 20px;
+      padding-bottom: 12px;
+      &__link {
+        padding: 0;
+        margin: 0;
+        padding-bottom: 40px;
+        @media screen and (min-width: 992px) {
+          padding: 0;
+        }
+
+        li {
+          list-style: none;
+          margin-bottom: 8px;
+          color: white;
+          a {
+            text-decoration: none;
+            text-align: left;
+            color: white;
+          }
+        }
+      }
+    }
+    &__rights {
+      border-top: 1px solid white;
+      padding-top: 20px;
+      text-align: center;
+      @include df(flex, center, center, column, 12px);
+      color: white;
+      h5 {
+        display: flex;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

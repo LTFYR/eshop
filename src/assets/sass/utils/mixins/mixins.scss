@@ -1,0 +1,82 @@
+@mixin df($flex, $justify, $align, $direction, $gap) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+@mixin imgsz($width: 40px, $height: 40px) {
+  width: $width;
+  height: $height;
+}
+@mixin pad($pad) {
+  padding: $pad;
+}
+@mixin pypx($py, $px) {
+  padding: $py $px;
+}
+@mixin mymx($my, $mx) {
+  margin: $my, $mx;
+}
+@mixin margin($mt, $mr, $mb, $ml) {
+  margin: $mt $mr $mb $ml;
+}
+@mixin tcenter($textalign: center) {
+  text-align: $textalign;
+}
+@mixin gap($gap) {
+  gap: $gap;
+}
+@mixin bradius($borderRadius) {
+  border-radius: $borderRadius;
+}
+@mixin container($width: 100%, $max-width: 1024px) {
+  width: $width;
+  max-width: $max-width;
+}
+@mixin boxshadow($boxshadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.4)) {
+  box-shadow: $boxshadow;
+}
+@mixin width($width: 330px) {
+  width: $width;
+}
+@mixin mauto($marginy: 0, $marginx: auto) {
+  margin: $marginy $marginx;
+}
+@mixin img(
+  $display: block,
+  $width: 100%,
+  $object: cover,
+  $height: 100%,
+  $max-height: 100%,
+  $max-width: 100%
+) {
+  display: $display;
+  width: $width;
+  object-fit: $object;
+  height: $height;
+  max-width: $max-width;
+  max-height: $max-height;
+}
+@mixin pfc($py: 80px, $px: 0) {
+  padding: $py $px;
+}
+@mixin imgborder($overflow: hidden, $bradius: 4px) {
+  overflow: $overflow;
+  border-radius: $bradius;
+}
+@mixin spacing {
+  letter-spacing: 0.1rem;
+}
+@mixin shadow-light {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+@mixin shadow-dark {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+@mixin static-width {
+  width: 620px;
+}
+@mixin max-width {
+  max-width: 1176px;
+}

@@ -1,0 +1,147 @@
+@import "../index.scss";
+.nav-container {
+  height: 5rem;
+  @include df(flex, center, center, null, null);
+  background-color: #000;
+  @media (min-width: 992px) {
+    display: none;
+  }
+  @media screen and (max-width: 992px) and (min-width: 320px) {
+    display: none;
+  }
+  &__center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1290px;
+
+    .cart-wrapper {
+      display: none;
+    }
+    &__header {
+      @include df(flex, space-between, center, null, null);
+      img {
+        width: 175px;
+        height: 70px;
+        margin-left: -15px;
+      }
+      .logo {
+        color: white;
+        margin: 0;
+      }
+      &__button {
+        background-color: transparent;
+        border: transparent;
+        color: $primary;
+        cursor: pointer;
+        svg {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__links {
+      display: none;
+    }
+  }
+  @media (min-width: 992px) {
+    &__center {
+      .cart-wrapper {
+        display: grid;
+      }
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      &__header {
+        &__button {
+          display: none;
+        }
+      }
+      &__links {
+        display: flex;
+        justify-content: center;
+        &__link {
+          margin: 0 0.5rem;
+          list-style: none;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 1rem;
+          text-transform: capitalize;
+          letter-spacing: var(--spacing);
+          padding: 0.5rem;
+          &:hover {
+            border-bottom: 2px solid var(--clr-primary-7);
+          }
+        }
+      }
+    }
+  }
+}
+.nav-container.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  transition: ease-in-out 300ms;
+  animation: mymove 0.2s ease-in-out;
+
+  @keyframes mymove {
+    from {
+      top: -20px;
+      transition: ease-in-out 400ms;
+    }
+    to {
+      top: 0px;
+    }
+  }
+}
+
+/*cart icon style*/
+.cart-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 224px;
+  &__auth-btn {
+    @include df(flex, null, center, null, null);
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    @include spacing;
+    svg {
+      margin-left: 6px;
+    }
+  }
+  &__btn {
+    color: white;
+    font-size: 1.5rem;
+    @include spacing;
+    text-decoration: none;
+    color: white;
+    @include df(flex, null, center, null, null);
+    &__icon {
+      @include df(flex, null, center, null, null);
+      position: relative;
+      svg {
+        height: 1.6rem;
+        margin-left: 6px;
+      }
+      &--count {
+        position: absolute;
+        top: -10px;
+        right: -16px;
+        background: $primary5;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 0.75rem;
+        color: white;
+        padding: 2px;
+      }
+    }
+  }
+}

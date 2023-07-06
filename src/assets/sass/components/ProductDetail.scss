@@ -1,0 +1,224 @@
+@import "../index.scss";
+
+.pdetail {
+  &__product {
+    display: grid;
+    gap: 4rem;
+    margin-top: 2rem;
+    &__content {
+      &--price {
+        color: $primary5;
+      }
+      &--description {
+        line-height: 2;
+        max-width: 45em;
+      }
+      &--info {
+        text-transform: capitalize;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 125px 1fr;
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    &__product {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      &__content {
+        &--price {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+/*product-images*/
+.product-images {
+  img {
+    height: 600px;
+    width: 100%;
+    display: block;
+    border-radius: 1px;
+    object-fit: cover;
+  }
+  &__others {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 1rem;
+    img {
+      height: 100px;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: 576px) {
+    img {
+      height: 333px;
+    }
+    &__others {
+      img {
+        height: 80px;
+      }
+    }
+  }
+}
+
+/*rating*/
+.rating {
+  @include df(flex, null, center, null, null);
+  margin-bottom: 0.5rem;
+  &__stars {
+    span {
+      color: rgb(227, 227, 21);
+      font-size: 1rem;
+      margin-right: 0.25rem;
+    }
+  }
+  &__reviews {
+    margin-right: 0.5rem;
+  }
+}
+
+/*basket*/
+.basket {
+  &__colors {
+    @include df(flex, space-between, center, null, 8px);
+    text-transform: capitalize;
+    &__color {
+      display: flex;
+      &--btn {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        border: none;
+        margin-right: 0.5rem;
+        @include df(flex, center, center, null, null);
+        cursor: pointer;
+        opacity: 0.5;
+        background-color: #222;
+        svg {
+          font-size: 0.75rem;
+          color: white;
+        }
+      }
+      .active {
+        opacity: 1;
+      }
+    }
+  }
+  &__buttons {
+    padding-top: 2rem;
+    @include df(flex, space-between, center, null, 8px);
+  }
+}
+
+.basket-btns {
+  display: grid;
+  background-color: $primary5;
+  color: whitesmoke;
+  border: 1px solid $primary5;
+  border-radius: 4px;
+  height: 30.7px;
+  width: 140px;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  &__quantity {
+    margin: 0;
+    font-size: 22px;
+  }
+  &__increase,
+  &__decrease {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    padding: 1rem 0;
+    color: whitesmoke;
+    width: 2rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.similar {
+  padding-top: 10rem;
+  h2 {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  &__similar-products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    @media (min-width: 992px) {
+      display: flex;
+
+      flex-wrap: nowrap;
+    }
+    &__container {
+      position: relative;
+      width: 100%;
+      @media (min-width: 600px) and (max-width: 992px) {
+        width: 48%;
+      }
+      @media (min-width: 992px) {
+        width: 23%;
+      }
+
+      &__detail {
+        margin-top: 4px;
+        @include df(flex, space-between, center, null, null);
+        h5,
+        p {
+          margin-bottom: 0;
+          font-weight: 400;
+        }
+        p {
+          color: $primary5;
+          letter-spacing: 0.1rem;
+        }
+      }
+      &__url {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $primary5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        transition: 300ms ease-in;
+        opacity: 0;
+        cursor: pointer;
+        svg {
+          font-size: 1.25rem;
+          color: white;
+        }
+      }
+
+      &:hover img {
+        opacity: 0.5;
+      }
+      &:hover &__url {
+        opacity: 1;
+      }
+    }
+    img {
+      @include img;
+      height: 300px;
+    }
+  }
+}
